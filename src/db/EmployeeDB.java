@@ -18,14 +18,21 @@ public class EmployeeDB {
 
     public void addEmployee(Employee employee) {
         //TODO: Implement
+        employees.add(employee);
     }
 
     public void deleteEmployee(Employee employee) {
         //TODO: Implement
+        employees.remove(employee);
     }
 
     public void updateEmployee(Employee employee) {
         //TODO: Implement
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i).getId().equals(employee.getId()) ) {
+                employees.set(i, employee);
+            }
+        }
     }
 
     private void addMockData() {
