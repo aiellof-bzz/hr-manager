@@ -1,5 +1,7 @@
 import view.View;
 
+import java.sql.SQLOutput;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class HRManager {
@@ -34,8 +36,15 @@ public class HRManager {
 
     private static void selectMenu() {
         //TODO: add error handling
-        int selectedMenuId = scanner.nextInt();
-        showMenu(selectedMenuId);
+        int selectedMenuId;
+        try {
+            selectedMenuId = scanner.nextInt();
+            showMenu(selectedMenuId);
+        }catch(InputMismatchException e) {
+            System.out.println("Invalid input! Please select a valid NUMBER.");
+            scanner.nextLine();
+            selectMenu();
+        }
     }
 
     private static void showMenu(int selectedMenuId) {
