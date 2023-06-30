@@ -3,7 +3,6 @@ package db;
 import models.Employee;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import util.HRManagerUtil;
@@ -68,7 +67,7 @@ public class EmployeeDB {
         employees = mockData;
     }
 
-    public List<Employee> getEmployees() {
+    public List<Employee> getEmployees(int employeeId) {
         return employees;
     }
 }

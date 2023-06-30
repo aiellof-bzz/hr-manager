@@ -1,6 +1,7 @@
 import view.View;
 
 import java.sql.SQLOutput;
+import java.text.ParseException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -40,14 +41,14 @@ public class HRManager {
         try {
             selectedMenuId = scanner.nextInt();
             showMenu(selectedMenuId);
-        }catch(InputMismatchException e) {
+        }catch(InputMismatchException | ParseException e) {
             System.out.println("Invalid input! Please select a valid NUMBER.");
             scanner.nextLine();
             selectMenu();
         }
     }
 
-    private static void showMenu(int selectedMenuId) {
+    private static void showMenu(int selectedMenuId) throws ParseException {
         switch (selectedMenuId) {
             case 1:
                 System.exit(0);
